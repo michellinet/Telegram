@@ -38,24 +38,24 @@
             </objects>
             <point key="canvasLocation" x="1224.8" y="140.77961019490255"/>
         </scene>
-        <!--View Controller-->
+        <!--Heyyyyy-->
         <scene sceneID="eEE-U0-T1O">
             <objects>
-                <viewController id="QSB-se-ksR" sceneMemberID="viewController">
+                <viewController id="QSB-se-ksR" customClass="WrapperInputViewController" customModule="Telegram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Og3-2w-aDn"/>
                         <viewControllerLayoutGuide type="bottom" id="UbI-CQ-6Gf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LXA-lh-MsG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nCO-Q0-eDF"/>
+                    <navigationItem key="navigationItem" title="Heyyyyy" id="nCO-Q0-eDF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TH2-d0-a04" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1476" y="-531.18440779610194"/>
+            <point key="canvasLocation" x="1284" y="-581"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MAQ-ZJ-gZZ">
@@ -80,9 +80,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EKP-fd-8k7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GUW-GG-HiJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="GUW-GG-HiJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -91,7 +92,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aVs-gR-bfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="536.79999999999995" y="-531.18440779610194"/>
+            <point key="canvasLocation" x="286" y="-580"/>
         </scene>
     </scenes>
 </document>

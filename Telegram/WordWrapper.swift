@@ -16,7 +16,7 @@ struct Wrapper {
     var maxCharacters = 0
     var text = [String]()
 
-    mutating func wrapText() -> [String] {
+    func wrapText() -> [String] {
 
         var wrappedText = [String]()
 

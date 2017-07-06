@@ -16,6 +16,7 @@
 		01C089C11F057576009B9C47 /* TelegramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C089C01F057576009B9C47 /* TelegramTests.swift */; };
 		01C089CC1F057576009B9C47 /* TelegramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C089CB1F057576009B9C47 /* TelegramUITests.swift */; };
 		01C089DA1F0575FB009B9C47 /* WordWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C089D91F0575FB009B9C47 /* WordWrapper.swift */; };
+		01C089DE1F0EE244009B9C47 /* WrapperInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C089DD1F0EE244009B9C47 /* WrapperInputViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		01C089CB1F057576009B9C47 /* TelegramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramUITests.swift; sourceTree = "<group>"; };
 		01C089CD1F057576009B9C47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01C089D91F0575FB009B9C47 /* WordWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordWrapper.swift; sourceTree = "<group>"; };
+		01C089DD1F0EE244009B9C47 /* WrapperInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrapperInputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				01C089D91F0575FB009B9C47 /* WordWrapper.swift */,
 				01C089AA1F057576009B9C47 /* ViewController.swift */,
 				01C089AC1F057576009B9C47 /* Main.storyboard */,
+				01C089DD1F0EE244009B9C47 /* WrapperInputViewController.swift */,
 				01C089B21F057576009B9C47 /* Assets.xcassets */,
 				01C089B41F057576009B9C47 /* LaunchScreen.storyboard */,
 				01C089B71F057576009B9C47 /* Info.plist */,
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01C089B11F057576009B9C47 /* Telegram.xcdatamodeld in Sources */,
+				01C089DE1F0EE244009B9C47 /* WrapperInputViewController.swift in Sources */,
 				01C089DA1F0575FB009B9C47 /* WordWrapper.swift in Sources */,
 				01C089AB1F057576009B9C47 /* ViewController.swift in Sources */,
 				01C089A91F057576009B9C47 /* AppDelegate.swift in Sources */,
