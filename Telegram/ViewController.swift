@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UITableViewController {
-    var wrapper = Wrapper()
+    var wrapper : Wrapper
 
     init(wrapper: Wrapper) {
         self.wrapper = wrapper

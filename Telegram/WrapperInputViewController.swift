@@ -23,32 +23,26 @@ class WrapperInputViewController: UIViewController {
             let inputWrapper = Wrapper(maxCharacters: maxCharacterInput, text: [textInput])
 
             navigationController?.pushViewController(ViewController(wrapper: inputWrapper), animated: true)
-
         } else {
             //TODO: tell da user its not workin'
         }
-
     }
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
 
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonPressed))
         navigationItem.rightBarButtonItem = doneButton
 
         edgesForExtendedLayout = UIRectEdge()
-
+        //UI Stuff
         maxCharacterLabel.text = "Number of Characters Per Line"
-
         maxCharacterTextField.borderStyle = .line
-
         textInputLabel.text = "Text to Wrap"
-
         textInputTextView.layer.borderWidth = 1
         textInputTextView.layer.borderColor = UIColor.black.cgColor
 
+        //Stack View Stuff
         inputStackView.axis = .vertical
         inputStackView.distribution = .fill
         inputStackView.alignment = .center
@@ -62,6 +56,7 @@ class WrapperInputViewController: UIViewController {
         inputStackView.frame = view.bounds
         view.addSubview(inputStackView)
 
+        //A Lot of Constraints
         view.addConstraint(NSLayoutConstraint(item: inputStackView, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: -10))
         view.addConstraint(NSLayoutConstraint(item: inputStackView, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 10))
         view.addConstraint(NSLayoutConstraint(item: inputStackView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 10))
@@ -76,10 +71,5 @@ class WrapperInputViewController: UIViewController {
         view.addConstraint(NSLayoutConstraint(item: maxCharacterLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 30))
         view.addConstraint(NSLayoutConstraint(item: textInputLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 30))
     }
-
-
-
-
-
     
 }
