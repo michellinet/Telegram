@@ -38,7 +38,7 @@
             </objects>
             <point key="canvasLocation" x="1224.8" y="140.77961019490255"/>
         </scene>
-        <!--Heyyyyy-->
+        <!--Wrapper-->
         <scene sceneID="eEE-U0-T1O">
             <objects>
                 <viewController id="QSB-se-ksR" customClass="WrapperInputViewController" customModule="Telegram" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,7 +51,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Heyyyyy" id="nCO-Q0-eDF"/>
+                    <navigationItem key="navigationItem" title="Wrapper" id="nCO-Q0-eDF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TH2-d0-a04" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -80,7 +80,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EKP-fd-8k7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="GUW-GG-HiJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="GUW-GG-HiJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>

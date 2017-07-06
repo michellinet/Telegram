@@ -11,12 +11,17 @@ import UIKit
 class ViewController: UITableViewController {
     var wrapper = Wrapper()
 
+    init(wrapper: Wrapper) {
+        self.wrapper = wrapper
+        super.init(style: .plain)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        wrapper.maxCharacters = 11
-        wrapper.text = ["This is a cat.", "Meow."]
-
         self.tableView.separatorStyle = .none
     }
 

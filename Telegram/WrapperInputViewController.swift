@@ -16,8 +16,27 @@ class WrapperInputViewController: UIViewController {
     let textInputTextView = UITextView()
     let inputStackView = UIStackView()
 
+    func doneButtonPressed() {
+        if let number = maxCharacterTextField.text, let text = textInputTextView.text{
+            let maxCharacterInput = Int(number) ?? 0
+            let textInput = text
+            let inputWrapper = Wrapper(maxCharacters: maxCharacterInput, text: [textInput])
+
+            navigationController?.pushViewController(ViewController(wrapper: inputWrapper), animated: true)
+
+        } else {
+            //TODO: tell da user its not workin'
+        }
+
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonPressed))
+        navigationItem.rightBarButtonItem = doneButton
 
         edgesForExtendedLayout = UIRectEdge()
 
@@ -31,9 +50,10 @@ class WrapperInputViewController: UIViewController {
         textInputTextView.layer.borderColor = UIColor.black.cgColor
 
         inputStackView.axis = .vertical
-        inputStackView.distribution = .fillEqually
+        inputStackView.distribution = .fill
         inputStackView.alignment = .center
         inputStackView.spacing = 5.0
+        inputStackView.translatesAutoresizingMaskIntoConstraints = false
 
         inputStackView.addArrangedSubview(maxCharacterLabel)
         inputStackView.addArrangedSubview(maxCharacterTextField)
@@ -42,17 +62,21 @@ class WrapperInputViewController: UIViewController {
         inputStackView.frame = view.bounds
         view.addSubview(inputStackView)
 
-        view.addConstraint(NSLayoutConstraint(item: inputStackView, attribute: .rightMargin, relatedBy: .equal, toItem: view, attribute: .rightMargin, multiplier: 1, constant: 10))
-        view.addConstraint(NSLayoutConstraint(item: inputStackView, attribute: .leftMargin, relatedBy: .equal, toItem: view, attribute: .leftMargin, multiplier: 1, constant: 10))
-        view.addConstraint(NSLayoutConstraint(item: inputStackView, attribute: .topMargin, relatedBy: .equal, toItem: view, attribute: .topMargin, multiplier: 1, constant: 10))
-        view.addConstraint(NSLayoutConstraint(item: inputStackView, attribute: .bottomMargin, relatedBy: .equal, toItem: view, attribute: .bottomMargin, multiplier: 1, constant: 10))
+        view.addConstraint(NSLayoutConstraint(item: inputStackView, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: -10))
+        view.addConstraint(NSLayoutConstraint(item: inputStackView, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 10))
+        view.addConstraint(NSLayoutConstraint(item: inputStackView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 10))
+        view.addConstraint(NSLayoutConstraint(item: inputStackView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: -10))
 
-        view.addConstraint(NSLayoutConstraint(item: inputStackView, attribute: .rightMargin, relatedBy: .equal, toItem: maxCharacterTextField, attribute: .rightMargin, multiplier: 1, constant: 5))
-        view.addConstraint(NSLayoutConstraint(item: inputStackView, attribute: .leftMargin, relatedBy: .equal, toItem: maxCharacterTextField, attribute: .leftMargin, multiplier: 1, constant: 5))
+        view.addConstraint(NSLayoutConstraint(item: inputStackView, attribute: .right, relatedBy: .equal, toItem: maxCharacterTextField, attribute: .right, multiplier: 1, constant: 5))
+        view.addConstraint(NSLayoutConstraint(item: maxCharacterTextField , attribute: .left, relatedBy: .equal, toItem: inputStackView, attribute: .left, multiplier: 1, constant: 5))
 
-        view.addConstraint(NSLayoutConstraint(item: inputStackView, attribute: .rightMargin, relatedBy: .equal, toItem: textInputTextView, attribute: .rightMargin, multiplier: 1, constant: 5))
-        view.addConstraint(NSLayoutConstraint(item: inputStackView, attribute: .leftMargin, relatedBy: .equal, toItem: textInputTextView, attribute: .leftMargin, multiplier: 1, constant: 5))
+        view.addConstraint(NSLayoutConstraint(item: inputStackView, attribute: .right, relatedBy: .equal, toItem: textInputTextView, attribute: .right, multiplier: 1, constant: 5))
+        view.addConstraint(NSLayoutConstraint(item: textInputTextView, attribute: .left, relatedBy: .equal, toItem: inputStackView, attribute: .left, multiplier: 1, constant: 5))
+
+        view.addConstraint(NSLayoutConstraint(item: maxCharacterLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 30))
+        view.addConstraint(NSLayoutConstraint(item: textInputLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 30))
     }
+
 
 
 

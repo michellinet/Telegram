@@ -106,8 +106,8 @@
 				01C089A81F057576009B9C47 /* AppDelegate.swift */,
 				01C089D91F0575FB009B9C47 /* WordWrapper.swift */,
 				01C089AA1F057576009B9C47 /* ViewController.swift */,
-				01C089AC1F057576009B9C47 /* Main.storyboard */,
 				01C089DD1F0EE244009B9C47 /* WrapperInputViewController.swift */,
+				01C089AC1F057576009B9C47 /* Main.storyboard */,
 				01C089B21F057576009B9C47 /* Assets.xcassets */,
 				01C089B41F057576009B9C47 /* LaunchScreen.storyboard */,
 				01C089B71F057576009B9C47 /* Info.plist */,
@@ -519,6 +519,7 @@
 				01C089D21F057576009B9C47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01C089D31F057576009B9C47 /* Build configuration list for PBXNativeTarget "TelegramTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +528,7 @@
 				01C089D51F057576009B9C47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01C089D61F057576009B9C47 /* Build configuration list for PBXNativeTarget "TelegramUITests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +537,7 @@
 				01C089D81F057576009B9C47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
