@@ -39,4 +39,11 @@ class TelegramTests: XCTestCase {
         XCTAssertEqual(textWrapped , ["This is a ", "cat. Meow."])
     }
 
+    func testThreeLines() {
+        var wrapper = Wrapper(maxCharacters: 11, text: ["This is a cat.", "Meow.", "Yes!"])
+        let textWrapped = wrapper.wrapText()
+        XCTAssertEqual(textWrapped , ["This is a ", "cat. Meow.", "Yes!"])
+
+    }
+
 }
