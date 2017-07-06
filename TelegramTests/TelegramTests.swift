@@ -22,15 +22,21 @@ class TelegramTests: XCTestCase {
     }
     
     func testNoChanges() {
-        let wrapper = Wrapper(maxCharacters: 13, text: ["This is a cat"])
+        var wrapper = Wrapper(maxCharacters: 13, text: ["This is a cat"])
         let textWrapped = wrapper.wrapText()
         XCTAssertEqual(textWrapped , ["This is a cat"])
     }
 
     func testOneLine() {
-        let wrapper = Wrapper(maxCharacters: 11, text: ["This is a cat"])
+        var wrapper = Wrapper(maxCharacters: 11, text: ["This is a cat"])
         let textWrapped = wrapper.wrapText()
         XCTAssertEqual(textWrapped , ["This is a ", "cat"])
+    }
+
+    func testTwoLines() {
+        var wrapper = Wrapper(maxCharacters: 11, text: ["This is a cat.", "Meow."])
+        let textWrapped = wrapper.wrapText()
+        XCTAssertEqual(textWrapped , ["This is a ", "cat. Meow."])
     }
 
 }

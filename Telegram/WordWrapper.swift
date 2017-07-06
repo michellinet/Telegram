@@ -16,11 +16,11 @@ struct Wrapper {
     var maxCharacters = 0
     var text = [String]()
 
-    func wrapText() -> [String] {
+    mutating func wrapText() -> [String] {
 
         var wrappedText = [String]()
 
-        for line in text {
+        for (index, line) in text.enumerated() {
             if line.characters.count <= maxCharacters {
                 wrappedText.append(line)
                 continue
@@ -34,7 +34,17 @@ struct Wrapper {
 
                     let reversedLastWord = String(lineReversed).substring(to: modifiedRange.lowerBound)
                     let lastWord = String(reversedLastWord.characters.reversed())
-                    wrappedText.append(lastWord)
+
+                    let hasNextLine = text.indices.contains(index + 1)
+                    if hasNextLine {
+                        let nextLine = text[index + 1]
+                        let modifiedNextLine = lastWord + " " + nextLine
+                        wrappedText.append(modifiedNextLine)
+//                        text.remove(at: index + 1)
+                        break
+                    } else {
+                        wrappedText.append(lastWord)
+                    }
 
                 }
             }
