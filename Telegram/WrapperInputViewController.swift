@@ -17,7 +17,7 @@ class WrapperInputViewController: UIViewController {
     let inputStackView = UIStackView()
 
     func doneButtonPressed() {
-        if let number = maxCharacterTextField.text, let text = textInputTextView.text{
+        if let number = maxCharacterTextField.text, let text = textInputTextView.text {
             let maxCharacterInput = Int(number) ?? 0
             let textInput = text
             let inputWrapper = Wrapper(maxCharacters: maxCharacterInput, text: [textInput])

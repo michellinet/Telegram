@@ -32,6 +32,7 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = wrapper.wrapText()[indexPath.row]
+        cell.textLabel?.numberOfLines = 0
         return cell
     }
 }

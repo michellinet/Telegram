@@ -16,55 +16,48 @@ struct Wrapper {
     var maxCharacters = 0
     var text = [String]()
 
+    // Assumptions: Tabs and double spaces dont exist
+
     func wrapText() -> [String] {
 
-        var wrappedText = [String]()
+        var wrappedText: [String] = []
 
-        var wasAppended = false
+        let blurb = text.joined(separator: " ")
+        let words = blurb.components(separatedBy: " ")
+        print(words)
 
-        for (index, line) in text.enumerated() {
-            if wasAppended {
-                wasAppended = false
+        var line = ""
+        var characterCount: Int {
+            return line.characters.count
+        }
+
+        for word in words {
+
+            let nextSubstring = (word == words.last) ? word : word + " "
+
+            if characterCount + nextSubstring.characters.count < maxCharacters {
+                line += nextSubstring
                 continue
-            } else {
-                if line.characters.count <= maxCharacters {
-                    wrappedText.append(line)
-                    wasAppended = false
-                    continue
-                } else {
 
-                    let lineReversed = line.characters.reversed()
+            } else if characterCount + nextSubstring.characters.count == maxCharacters {
+                line += nextSubstring
+                wrappedText.append(line)
+                line = ""
 
-                    if let modifiedRange = String(lineReversed).range(of: " ") {
-                        let modifiedReversedLine = String(lineReversed).substring(from: modifiedRange.lowerBound)
-                        //Adds max characters of current line to wrappedText
-                        wrappedText.append(String(modifiedReversedLine.characters.reversed()))
-
-                        let reversedLastWord = String(lineReversed).substring(to: modifiedRange.lowerBound)
-                        let lastWord = String(reversedLastWord.characters.reversed())
-
-                        //Adds remainder to next line or a new line, then to wrappedText
-                        let hasNextLine = text.indices.contains(index + 1)
-                        if hasNextLine {
-                            let nextLine = text[index + 1]
-                            let modifiedNextLine = lastWord + " " + nextLine
-                            wrappedText.append(modifiedNextLine)
-                            wasAppended = true
-                        } else {
-                            wrappedText.append(lastWord)
-                        }
-                        
-                    }
-                }
-
+            } else if characterCount + nextSubstring.characters.count > maxCharacters {
+                wrappedText.append(line)
+                line = nextSubstring
 
             }
 
         }
 
+        if !line.isEmpty {
+            wrappedText.append(line)
+        }
+
         return wrappedText
-
+        
     }
-
+    
 }
-

@@ -22,28 +22,34 @@ class TelegramTests: XCTestCase {
     }
     
     func testNoChanges() {
-        var wrapper = Wrapper(maxCharacters: 13, text: ["This is a cat"])
+        let wrapper = Wrapper(maxCharacters: 13, text: ["This is a cat"])
         let textWrapped = wrapper.wrapText()
         XCTAssertEqual(textWrapped , ["This is a cat"])
     }
 
     func testOneLine() {
-        var wrapper = Wrapper(maxCharacters: 11, text: ["This is a cat"])
+        let wrapper = Wrapper(maxCharacters: 11, text: ["This is a cat"])
         let textWrapped = wrapper.wrapText()
         XCTAssertEqual(textWrapped , ["This is a ", "cat"])
     }
 
     func testTwoLines() {
-        var wrapper = Wrapper(maxCharacters: 11, text: ["This is a cat.", "Meow."])
+        let wrapper = Wrapper(maxCharacters: 11, text: ["This is a cat.", "Meow."])
         let textWrapped = wrapper.wrapText()
         XCTAssertEqual(textWrapped , ["This is a ", "cat. Meow."])
     }
 
     func testThreeLines() {
-        var wrapper = Wrapper(maxCharacters: 11, text: ["This is a cat.", "Meow.", "Yes!"])
+        let wrapper = Wrapper(maxCharacters: 11, text: ["This is a cat.", "Meow.", "Yes!"])
         let textWrapped = wrapper.wrapText()
-        XCTAssertEqual(textWrapped , ["This is a ", "cat. Meow.", "Yes!"])
+        XCTAssertEqual(textWrapped , ["This is a ", "cat. Meow. ", "Yes!"])
 
+    }
+
+    func testMoveUpLines() {
+        let wrapper = Wrapper(maxCharacters: 20, text: ["This is a cat", "too fast", "YES!"])
+        let textWrapped = wrapper.wrapText()
+        XCTAssertEqual(textWrapped , ["This is a cat too ", "fast YES!"])
     }
 
 }
